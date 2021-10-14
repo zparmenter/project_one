@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
-const Book = require("../models/book");
-const Review = require("../models/review");
-const User = require("../models/user");
+const Book = require("../models/Book");
+const Review = require("../models/Review");
+const User = require("../models/User");
 
 
+
+//all books index route
 router.get("/", async function (req, res) {
     try {
 
@@ -25,12 +27,14 @@ router.get("/", async function (req, res) {
     }
 });
 
+
+//new book show route
 router.get("/new-book", (req, res) => {
     res.render("newBook");
 });
 
 
-
+//create book route...
 router.post("/", async (req, res) => {
     try {
         await Book.create(req.body);
@@ -39,6 +43,8 @@ router.post("/", async (req, res) => {
         return console.log(error);
     }
 });
+
+
 
 router.get("/:id", async function (req, res, next) {
     try {
