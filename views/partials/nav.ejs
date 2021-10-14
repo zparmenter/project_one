@@ -1,0 +1,28 @@
+<header>
+
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: rgb(49, 183, 255);">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="https://i.ibb.co/8j2K7CC/easy-simple.png" alt="" width="100" height="100">
+      </a>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div  class="navbar-nav ml-auto">
+            <a class="nav-link active" href="/all-books">All Books</a>
+            <a class="nav-link active" href="/new-user">New User</a>
+            <a class="nav-link active" href="/login">Log In</a>
+            <% if (typeof user !== 'undefined') { %>
+                <a class="nav-link active" href="/login/<%= user._id %> ">My Account</a>
+              <% } else { %>
+                <a class="nav-link active" href="/login">My Account</a>
+            <% } %> 
+          </div>
+        </div>
+      </div>
+    </nav>
+
+</header>
+

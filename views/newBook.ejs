@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs')%>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <main>
+
+
+    <section class='editBox'>
+        <div class="editBookForm">
+            <form action="/all-books" method="POST">
+                <h1>New Book Page</h1>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Title</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Title" name="title"/>
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Author</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Author" name="author"/>
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Price</span>
+                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="10" name="price"/>
+                </div>
+
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Image</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="http://" name="image"/>
+                </div>
+                <a href='/all-books'>Cancel</a>
+                <button class='btn btn-success'>Submit</button>
+                    <!-- Cancel POST routes to /all-books -->
+                
+            </form>
+        </div>
+    </section>
+
+
+            <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+
+    </main>
+</body>

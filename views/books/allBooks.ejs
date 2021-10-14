@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs')%>
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+  <% if (typeof user !== 'undefined') { %>
+    <% if (user.username === "Admin") { %>
+    <div class="text-right" id="newBookButton">
+        <button>
+            <a class="button is-info" href="/all-books/new-book">Add New Book</a>
+        </button>
+    </div>
+    <% } %>
+  <% } %>
+    
+
+    <div class="ourCatalog">
+        <h1>Our Catalog</h1>
+    </div>
+    
+
+  
+        <div>
+            <div class="displayCatalog">                  
+                <% for(let i = 0; i < books.length; i++) { %>
+                    <div class="card" style="width: 12rem;"> 
+                        <% const book = books[i]; %>
+                        <img  src="<%= book.image %>" alt="Book Image"  class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h4>
+                            <a href="/all-books/<%= book.id %>">
+                                <%= book.title %>
+                            </a>
+                        </h4>
+                        <h6>
+                            <%= book.author %>
+                        </h6>
+                        <p>
+                            $<%= book.price %>
+                        </p>
+                    </div>
+                </div>
+             <% } %>
+            </div>
+        </div> 
+
+    <%- include('../partials/footer.ejs') %> 
+
+</body>
+</html>
+
