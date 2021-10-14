@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
-const Book = require("../models/book");
-const Review = require("../models/review");
-const User = require("../models/user");
+const {
+    Book, 
+    Review,
+    User, 
+}= require("../models");
 
 /*-------------NEW USER ROUTE-------------*/
 router.get("/new-user", function (req, res) {

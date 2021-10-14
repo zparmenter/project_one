@@ -2,9 +2,12 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 
-const Book = require("../models/Book");
-const Review = require("../models/Review");
-const User = require("../models/User");
+const {
+    Book, 
+    Review,
+    User, 
+}= require("../models");
+
 
 
 
